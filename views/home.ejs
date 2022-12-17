@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>ListinhaDosCria</title>
+  </head>
+  <body>
+    <section class="mainSection">
+      <h1 class="heading">Lista de Tarefas</h1>
+      <div class="box">
+        <%items.forEach(function(item){ %>
+        <form class="itemForm" action="/delete" method="POST">
+          <div class="item">
+            <input
+              type="checkbox"
+              name="checkbox"
+              value="<%=item._id%>"
+              onchange="Swal.fire({
+                title: 'Tem certeza que quer deletar a Tarefa?',
+                text: 'Você não tem como voltar atrás!',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                cancelButtonText: 'NÃO, FOI SEM QUERER!!',
+                confirmButtonText: 'Sim, Deletar'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  Swal.fire(
+                    'Deletado!',
+                    'Sua Tarefa foi Deletada.',
+                    'success'
+                  ).then(() => {
+                    this.form.submit()
+                  })
+                }})"
+            />
+            <p><%=item.item%></p>
+          </div>
+        </form>
+        <% }) %>
+      </div>
+      <div class="formHolder">
+        <form class="textForm" action="/" method="POST">
+          <input class="mainInput" type="text" name="input" />
+          <button
+            type="submit"
+            class="mainButton"
+            onclick="Swal.fire({
+            title: 'Sucesso!',
+            text: 'Tarefa Adicionada com Sucesso',
+            icon: 'success',
+            confirmButtonText: 'OK'
+          }).then(()=>{
+            window.location.replace(window.location.origin);})"
+          >
+            Adicionar
+          </button>
+        </form>
+      </div>
+    </section>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>
