@@ -11,11 +11,11 @@ Projeto realiazado para Disciplina do Biopark Connect
 </div>
 <h2>Integrantes do grupo</h2>
 <ol>
-  <li>Gabriel nava</li>
-  <li>Jose Klak</li>
-  <li>Marcus Silverio</li>
-  <li>Cristyan Moraes</li>
-  <li>Lucas Passarote</li>
-  <li>Paula Valente</li>
+  <li>Gabriel nava</li> - Front
+  <li>Jose Klak</li> - Conexao com banco
+  <li>Marcus Silverio</li> - Banco
+  <li>Cristyan Moraes</li> - Front
+  <li>Lucas Passarote</li> - Conexao com banco
+  <li>Paula Valente</li> - Banco
 <ol>
   
